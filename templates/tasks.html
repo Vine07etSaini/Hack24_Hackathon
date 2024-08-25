@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tasks</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/tasks-styles.css')}}">
+
+    <!-- <link rel="stylesheet" href="tasks-styles.css"> Link to the external CSS file -->
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            &#9776;
+        </div>
+        <div class="sidebar-links">
+            <a href="/templates/dashboard.html">Dashboard</a>
+            <a href="/templates/projects.html">Projects</a>
+            <a href="/templates/project-details.html">Tasks</a>
+            <a href="reports.html">Reports</a>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="upper">
+        <header>
+            <div class="logo">
+                <img src="static/images/logo_main.png" alt="WorkHub Logo">
+            </div>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile">
+            </div>
+        </header>
+    </div>
+    <div class="tasks-container">
+        <h1 class="page-title">All Tasks</h1>
+        
+        <!-- Tasks Table -->
+        <table class="tasks-table">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Project Name</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Task 1</td>
+                    <td>Design the project logo</td>
+                    <td>August 30, 2024</td>
+                    <td class="status-in-progress">In Progress</td>
+                    <td>John Doe</td>
+                    <td class="priority-high">High</td>
+                </tr>
+                <tr>
+                    <td>Task 2</td>
+                    <td>Set up the database</td>
+                    <td>September 5, 2024</td>
+                    <td class="status-not-started">Not Started</td>
+                    <td>Jane Smith</td>
+                    <td class="priority-medium">Medium</td>
+                </tr>
+                <tr>
+                    <td>Task 3</td>
+                    <td>Create the landing page</td>
+                    <td>September 10, 2024</td>
+                    <td class="status-completed">Completed</td>
+                    <td>Alice Brown</td>
+                    <td class="priority-low">Low</td>
+                </tr>
+                <!-- Add more task rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('active');
+    }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('createProjectModal')) {
+            closeModal();
+        }
+    }
+</script>
+</html>

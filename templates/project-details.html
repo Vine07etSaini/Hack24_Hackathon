@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/project-details.css')}}">
+</head>
+<body>
+    <div class="project-detail-container">
+        <!-- Project Header -->
+        <div class="project-header">
+            <div class="project-title-logo">
+                <div>
+                    <h1 class="project-name">Online Integrated Platform for Student Projects</h1>
+                    <a href="#" style="color: yellow;">GitHub Link</a>
+                </div>
+            </div>
+            <img src="/static/images/logo_main.png" style="margin-top: -45px;" alt="Project Logo" class="project-logo" float >
+
+            <div style="float: right;margin-top: -70px;"><a href="chat.html"><img src="/static/images/chat-icon.png" alt="connect with team" srcset="" width="100px" height="100px"></a></div>
+        </div>
+        
+        <!-- Project Information -->
+        <div class="project-info">
+            <div class="problem-statement">
+                <h2>Problem Statement</h2>
+                <p>Develop a platform for managing and showcasing student projects, enabling collaboration and resource sharing.</p>
+            </div>
+            <div class="project-meta">
+                <p><strong>Start Date:</strong> 2024-09-10</p>
+                <p><strong>Deadline:</strong> 2024-12-05    </p>
+                <p><strong>Team Members:</strong> Shivam mahendru, Vineet saini, shubham semwal, shivam joshi</p>
+                <p><strong>Technologies:</strong> Flask, Node.js, MongoDB, WebSockets</p>
+            </div>
+        </div>
+
+        <!-- Project Timeline -->
+        <div class="project-timeline">
+            <h2>Project Timeline</h2>
+            <div id="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date"> 2024-09-10 to 2024-09-20</div>
+                    <div class="timeline-content">Requirement Analysis and Wireframing</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024-09-21 to 2024-10-10</div>
+                    <div class="timeline-content">Develop Backend API for Project Management:</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"> 2024-10-11 to 2024-10-30</div>
+                    <div class="timeline-content">Frontend Development (UI/UX Design)</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2024-11-01 to 2024-11-15</div>
+                    <div class="timeline-content">Integrate Frontend with Backend: </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"> 2024-12-03 to 2024-12-05</div>
+                    <div class="timeline-content">Final Deployment and Documentation:</div>
+                </div>
+                <!-- Add more timeline items as needed -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

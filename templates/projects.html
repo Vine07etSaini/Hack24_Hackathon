@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - WorkHub</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/projects-styles.css')}}">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="menu-icon" onclick="toggleSidebar()">
+            &#9776;
+        </div>
+        <div class="sidebar-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/projects">Projects</a>
+            <a href="/tasks">Tasks</a>
+            <a href="reports.html">Reports</a>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="upper">
+        <header>
+            <div class="logo">
+                <img src="static/images/logo_main.png" alt="WorkHub Logo">
+            </div>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="User Profile">
+            </div>
+        </header>
+    </div>
+
+        <div class="projects-page">
+            <div class="project-div">
+                <h1>All Projects</h1>
+                <button class="create-project-btn" onclick="openModal()">Create Project</button>
+            </div>
+            <div class="projects-table-div">
+                <table class="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project A</td>
+                            <td>In Progress</td>
+                            <td>Aug 30, 2024</td>
+                            <td>
+                                <a href="/templates/project-details.html">View</a> |
+                                <a href="#">Edit</a> |
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Project B</td>
+                            <td>Not Started</td>
+                            <td>Sep 5, 2024</td>
+                            <td>
+                                <a href="/templates/project-details.html">View</a> |
+                                <a href="#">Edit</a> |
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Project C</td>
+                            <td>Completed</td>
+                            <td>Aug 15, 2024</td>
+                            <td>
+                                <a href="/templates/project-details.html">View</a> |
+                                <a href="#">Edit</a> |
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <!-- Add more projects as needed -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Project Modal -->
+    <div id="createProjectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Create New Project</h2>
+            <form id="createProjectForm" action="/details">
+                <label for="projectName">Project Name:</label>
+                <input type="text" id="projectName" name="projectName" required>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required>
+
+                <label for="deadlineDate">Deadline Date:</label>
+                <input type="date" id="deadlineDate" name="deadlineDate" required>
+
+                <label for="members">Members:</label>
+                <input type="text" id="members" name="members" placeholder="Enter members separated by commas" required>
+
+                <label for="mentors">Mentors:</label>
+                <input type="text" id="mentors" name="mentors" placeholder="Enter mentors separated by commas" required>
+
+                <label for="techStack">Tech Stack:</label>
+                <input type="text" id="techStack" name="techStack" placeholder="Enter technologies separated by commas" required>
+
+                <label for="github">GitHub:</label>
+                <input type="text" id="github" name="github" placeholder="Enter github project link" required>  
+                
+                <label for="problemStatement">Problem Statement:</label>
+                <textarea id="problemStatement" name="problemStatement" rows="4" required></textarea>
+
+                <button type="submit" class="submit-btn">Create Project</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+
+        function openModal() {
+            document.getElementById('createProjectModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('createProjectModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('createProjectModal')) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
