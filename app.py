@@ -34,7 +34,7 @@ def validate():
 
 
 @app.route('/details', methods=['POST'])
-def details():
+def detail():
     name=request.form.get("projectName")
     start_date = request.form.get("startDate")
     deadlineDate = request.form.get("deadlineDate")
@@ -48,11 +48,12 @@ def details():
        "Start_Date":start_date,
        "Deadline":deadlineDate,
        "Members":members,
- "Mentors":mentors,
-"Tech_Stack":techStack,
-"Github":github,
-"Problem_statement":problemStatement,
+       "Mentors":mentors,
+       "Tech_Stack":techStack,
+       "Github":github,
+      "Problem_statement":problemStatement,
     })
+    return render_template("Projects.html")
 
 @app.route('/signup', methods=['POST'])
 def signup():
